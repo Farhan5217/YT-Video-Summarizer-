@@ -4,14 +4,16 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain.text_splitter import CharacterTextSplitter
 import os
 import openai
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+# load_dotenv()
+# api_key = os.getenv("OPENAI_API_KEY")
 
 
 import streamlit as st
 st.title('Youtube Video Summarizer')
+
+api_key = st.text_input("Paste the OpenAI API Key")
 
 if api_key:
     os.environ["OPENAI_API_KEY"] = api_key
